@@ -32,8 +32,7 @@ const space = {
   72: '18rem',
   80: '20rem',
   96: '24rem',
-  128: '32rem',
-  160: '48rem',
+  contentWidth: '96rem',
 }
 
 const mainTheme = {

@@ -1,16 +1,21 @@
 import { Routes, Route } from 'react-router-dom';
+import { x } from '@xstyled/styled-components';
 
 import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
 
 const App = (): JSX.Element =>
   (
-    <div>
+    <x.div
+      display="flex"
+      flexDirection="column"
+      minH="200vh"
+    >
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </div>
+    </x.div>
   );
 
 export default App;

@@ -9,7 +9,7 @@ const ContentWrapper = ({ children }: ContentWrapperProps): JSX.Element =>
     <x.div
       mx="auto"
       w="100%"
-      maxW={160}
+      maxW="contentWidth"
     >
       {children}
     </x.div>

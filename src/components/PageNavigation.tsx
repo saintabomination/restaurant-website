@@ -1,13 +1,32 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { x } from '@xstyled/styled-components';
 
 import ContentWrapper from './ContentWrapper';
 
-const PageNavigation = (): JSX.Element =>
-  (
+const PageNavigation = (): JSX.Element => {
+  const [isSticky, setIsSticky] = useState<boolean>(false);
+  useEffect(() => {
+    const scrollHandler = () => {
+      window.scrollY > 0
+        ? setIsSticky(true)
+        : setIsSticky(false)
+    }
+    document.addEventListener('scroll', scrollHandler);
+
+    return () => {
+      document.removeEventListener('scroll', scrollHandler);
+    }
+  }, []);
+
+  return (
     <x.nav
+      position="sticky"
+      top={0}
       display="flex"
       alignItems="center"
+      py={isSticky ? 6 : 10}
+      transition=".2s"
     >
       <ContentWrapper>
         <x.div
@@ -26,5 +45,6 @@ const PageNavigation = (): JSX.Element =>
       </ContentWrapper>
     </x.nav>
   );
+}
 
 export default PageNavigation;
