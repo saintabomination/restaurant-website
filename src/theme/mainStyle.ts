@@ -12,7 +12,8 @@ const MainStyle = createGlobalStyle`
   }
 
   body {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    font-family: 'Lato', sans-serif;
   }
 `;
 

@@ -32,14 +32,17 @@ const PageNavigation = (): JSX.Element => {
         <x.div
           display="flex"
           alignItems="center"
+          px={10}
           w="100%"
         >
           <h2>Page Navigation</h2>
           <x.ul
             display="flex"
             ml="auto"
+            gap={6}
           >
             <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About us</Link></li>
           </x.ul>
         </x.div>
       </ContentWrapper>
