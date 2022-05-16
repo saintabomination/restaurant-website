@@ -12,6 +12,8 @@ const MainStyle = createGlobalStyle`
   }
 
   body {
+    background-color: pageBackground;
+    color: textColor;
     font-size: 1.3rem;
     font-family: 'Lato', sans-serif;
   }

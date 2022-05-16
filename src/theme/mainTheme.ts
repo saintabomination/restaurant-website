@@ -46,6 +46,10 @@ const mainTheme = {
   },
   space,
   sizes: space,
+  colors: {
+    pageBackground: '#fdfdfd',
+    textColor: '#050505',
+  },
   states: {
     _: null,
     hover: '&:hover',

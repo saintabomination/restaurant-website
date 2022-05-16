@@ -4,10 +4,12 @@ import ContentWrapper from './ContentWrapper';
 
 type HeaderProps = {
   centered?: boolean;
+  backgroundImage?: string;
+  darkenValue?: number;
   children: React.ReactNode;
 };
 
-const Header = ({ centered, children }: HeaderProps): JSX.Element =>
+const Header = ({ centered, backgroundImage, darkenValue, children }: HeaderProps): JSX.Element =>
   (
     <x.div
       display="flex"
@@ -15,6 +17,10 @@ const Header = ({ centered, children }: HeaderProps): JSX.Element =>
       justifyContent={centered ? 'center' : 'unset'}
       alignItems={centered ? 'center' : 'unset'}
       py={24}
+      background={backgroundImage ? `linear-gradient(to bottom, rgba(0, 0, 0, ${darkenValue}), rgba(0, 0, 0, ${darkenValue})), url(${backgroundImage})` : 'unset'}
+      backgroundSize="cover"
+      backgroundPosition="center"
+      color="pageBackground"
       textAlign={centered ? 'center' : 'inherit'}
     >
       <ContentWrapper>

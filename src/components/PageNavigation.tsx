@@ -12,6 +12,7 @@ const PageNavigation = (): JSX.Element => {
         ? setIsSticky(true)
         : setIsSticky(false)
     }
+    scrollHandler();
     document.addEventListener('scroll', scrollHandler);
 
     return () => {
@@ -26,6 +27,8 @@ const PageNavigation = (): JSX.Element => {
       display="flex"
       alignItems="center"
       py={isSticky ? 6 : 10}
+      bg={isSticky ? 'textColor' : 'pageBackground'}
+      color={isSticky ? 'pageBackground' : 'textColor'}
       transition=".2s"
     >
       <ContentWrapper>
@@ -39,7 +42,7 @@ const PageNavigation = (): JSX.Element => {
           <x.ul
             display="flex"
             ml="auto"
-            gap={6}
+            gap={8}
           >
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About us</Link></li>
